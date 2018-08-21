@@ -16,6 +16,15 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
       },
       {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "fonts/[name].[ext]",
+          },
+        },
+      },
+      {
         test: /\.(png|jpg|svg|gif})$/,
         use: [
           'file-loader?outputPath=images/',
